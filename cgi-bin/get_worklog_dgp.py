@@ -86,7 +86,7 @@ def Get_Yesterday_Logged_Work():
         except JIRAError as e:
             print("FUCK OFF: ", e.status_code, e.text)
             continue
-#    print("epmployees_worklog_yesterday: ", epmployees_worklog_yesterday)
+# #   print("epmployees_worklog_yesterday: ", epmployees_worklog_yesterday)
     return(epmployees_worklog_yesterday)
 
 def Get_Current_Month_Logged_Work():
