@@ -32,17 +32,22 @@ if __name__ == "__main__":
     for person in summary:
         print ("Person: ", person)
         if summary[person] == 0:
-            text_to_send = "Настал час залогировать в проект свой время потраченное!"
+            text_to_send = "На текущий момент в сегодняшний день залогированно: {}. Настал час залогировать в свои проекты время потраченное!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
-            text_to_send = 'Маловато времени залогировано, есть ещё что?'
+            text_to_send = "Я вижу что-то сделано: {}. Но явно не всё мне видно. Залогируй оставшееся время пожалуйста!".format(summary[person])
+            if person in config.emails:
+                smtp_sender.SendMessage(text_to_send, config.emails[person])
+            else: print ("no email")
+        elif (summary[person] > 3 and summary[person] <= 8):
+            text_to_send = "Сделано не мало: {}. Не забудь залогировать оставшееся!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif summary[person] > 8:
-            text_to_send = "Отдохни старина, это был славный день!"
+            text_to_send = "Вот это результат: {}!. Отдохни старина, это был славный день!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
