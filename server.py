@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!usr/bin/python3
 ##!C:\Python36\python.exe
 from http.server import HTTPServer, CGIHTTPRequestHandler
 server_address = ("", 8001)
