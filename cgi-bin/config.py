@@ -19,8 +19,12 @@ jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
              'e.ostretsov': ['bus', 'ugd', 'ugds'],
              'a.sheviakov': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM']
             }
-
+youtrack_tkp = {'e.barnaev': 'TKP',
+             'm.orischenko': 'TKP',
+             'e.ostretsov': 'TKP',  
+             'y.chernov': 'TKP'
+            }
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
          # 'a.sheviakov': 'a.sheviakov@altatec.ru'
-            #'m.orischenko': 'm.orischenko@altatec.ru'
+            'm.orischenko': 'm.orischenko@altatec.ru'
             }

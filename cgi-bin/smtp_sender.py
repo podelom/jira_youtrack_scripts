@@ -9,9 +9,9 @@ from email.message import EmailMessage
 def SendMessage(text_to_send, email):
     refused = {}
     _recepients_emails = email
-    _sender_name = 'Надежда Ворклоговна'
+    _sender_name = 'Любовь Ворклоговна'
     _sender_address = 'nadezhda_worklogovna@altatec.ru'
-    _subject = 'Я твоя любимая Напоминалочка'
+    _subject = 'Я - твоя любимая Напоминалочка'
 
     msg = EmailMessage()
     msg.set_content(text_to_send)

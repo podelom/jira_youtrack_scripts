@@ -2,6 +2,7 @@
 
 import get_worklog_altatec
 import get_worklog_dgp
+import get_worklog_youtrack
 import config
 import smtp_sender
 import json
@@ -10,6 +11,7 @@ import json
 if __name__ == "__main__":
     jira_dgp = config.jira_dgp
     jira_altatec = config.jira_altatec
+    youtrack_tkp = config.youtrack_tkp
     summary = {}
     for name in jira_dgp:
         person = name
@@ -26,6 +28,18 @@ if __name__ == "__main__":
         altatec_worklog_today = get_worklog_altatec.Get_Today_Logged_Work(person, projects)
         if person in summary:
             summary[person] += altatec_worklog_today[person]
+        else:
+            summary.update(altatec_worklog_today)
+
+    for name in youtrack_tkp:
+        person = name
+        projects = youtrack_tkp[name]
+        print("projects: ", projects)
+        print("person: ", person)
+        tkp_worklog_today = get_worklog_youtrack.Get_Today_Logged_Work(person, projects)
+        print ("tkp_worklog_today", tkp_worklog_today)
+        if person in summary:
+            summary[person] += tkp_worklog_today[person]
         else:
             summary.update(altatec_worklog_today)
 
