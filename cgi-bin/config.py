@@ -26,5 +26,5 @@ youtrack_tkp = {'e.barnaev': 'TKP',
             }
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
          # 'a.sheviakov': 'a.sheviakov@altatec.ru'
-            'm.orischenko': 'm.orischenko@altatec.ru'
+            #'m.orischenko': 'm.orischenko@altatec.ru'
             }
