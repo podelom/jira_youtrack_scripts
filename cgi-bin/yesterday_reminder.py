@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import get_worklog_altatec
 import get_worklog_dgp
