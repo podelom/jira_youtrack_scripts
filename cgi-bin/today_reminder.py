@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import get_worklog_altatec
 import get_worklog_dgp
@@ -62,7 +62,7 @@ if __name__ == "__main__":
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif summary[person] >= 8:
-            text_to_send = "Вот это результат: {}! Отдохни старина, это был славный день!".format(summary[person])
+            text_to_send = "Вот это результат: {}! Разомкни руки от клавиатуры, это был славный день!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
