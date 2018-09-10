@@ -55,12 +55,12 @@ if __name__ == "__main__":
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif (summary[person] > 3 and summary[person] <= 8):
-            text_to_send = "Сделано не мало: {}. Не забудь залогировать оставшееся!".format(summary[person])
+        elif (summary[person] > 3 and summary[person] < 8):
+            text_to_send = "Сделано немало: {}. Не забудь залогировать оставшееся!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif summary[person] > 8:
+        elif summary[person] >= 8:
             text_to_send = "Вот это результат: {}!. Отдохни старина, это был славный день!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
