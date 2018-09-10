@@ -8,6 +8,7 @@ import smtp_sender
 import json
 
 
+
 if __name__ == "__main__":
     jira_dgp = config.jira_dgp
     jira_altatec = config.jira_altatec
@@ -61,7 +62,7 @@ if __name__ == "__main__":
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif summary[person] >= 8:
-            text_to_send = "Вот это результат: {}!. Отдохни старина, это был славный день!".format(summary[person])
+            text_to_send = "Вот это результат: {}! Отдохни старина, это был славный день!".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
