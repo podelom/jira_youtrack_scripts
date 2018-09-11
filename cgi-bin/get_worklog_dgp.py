@@ -6,8 +6,8 @@ from datetime import datetime, timedelta
 import urllib3
 
 
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'cgi-bin/certs.pem'})
-jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
+jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'certs.pem'})
+#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
 #jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':False})
 fullnames = {}
 
