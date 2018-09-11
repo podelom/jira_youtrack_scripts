@@ -36,7 +36,11 @@ youtrack_tkp = {'e.barnaev': 'TKP',
                 'm.orischenko': 'TKP',
                 'e.ostretsov': 'TKP',
                 'a.v.vasiliev': 'TKP',  
-                'y.chernov': 'TKP'
+                'y.chernov': 'TKP',
+                'a.makushev': 'MOBI',
+                'a.vasiliev': 'MOBI'
+                }
+sign_for_jokes = {
                 }
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
@@ -46,10 +50,10 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'e.ostretsov': 'e.ostretsov@altatec.ru',
            'z.besaev': 'z.besaev@altatec.ru',
            'v.sapunov': 'v.sapunov@altatec.ru',
-           'd.shevyakova': 'd.shevyakova@altatec.ru',
-           'a.vanyushkin': 'a.vanyushkin@altatec.ru',
+           'd.shevyakova': 'd.sheviakova@altatec.ru',
+           'a.vanushkin': 'a.vanyushkin@altatec.ru',
            'a.konoplev': 'a.konoplev@altatec.ru',
-           's.suhorukov': 's.suhorukov@altatec.ru',
            'a.v.vasiliev': 'a.v.vasiliev@altatec.ru',
-           'l.vasiliev': 'l.vasiliev@altatec.ru'
+           'l.vasiliev': 'l.vasiliev@altatec.ru',
+           'a.vasiliev': 'a.vasiliev@altatec.ru'
           }

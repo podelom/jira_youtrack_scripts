@@ -46,25 +46,25 @@ if __name__ == "__main__":
     for person in summary:
         print ("Person: ", person)
         if summary[person] >= 0 and summary[person] <= 1:
-            text_to_send = "За вчерашний день залогированных часов: {}. Что, совсем ничего не было?".format(summary[person])
+            text_to_send = "За вчерашний день залогированных часов: {}. Если была вчера работа по проекту - прошу залогирвать".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif (summary[person] > 1 and summary[person] <= 3):
-            text_to_send = "Вчера немного залоггировано: {}. Но явно не всё мне видно. Залогируй оставшееся время пожалуйста!".format(summary[person])
+            text_to_send = "За вчера залоггировано: {}. Если есть недологированное время, прошу его внести.".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif (summary[person] > 3 and summary[person] < 8):
-            text_to_send = "Сделано вчера немало: {}. Не забудь залогировать оставшееся!".format(summary[person])
+        elif (summary[person] > 3 and summary[person] < 7):
+            text_to_send = "Сделано вчера немало: {}. Если есть недологированное время, прошу его внести.".format(summary[person])
             if person in config.emails:
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif summary[person] >= 8:
-            text_to_send = "Вот это результат! {}!. Сегодня тоже не забудь :)".format(summary[person])
-            if person in config.emails:
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
-            else: print ("no email")
+       # elif summary[person] >= 8:
+        #    text_to_send = "Вот это результат! {}!. Сегодня тоже не забудь :)".format(summary[person])
+         #   if person in config.emails:
+          #      smtp_sender.SendMessage(text_to_send, config.emails[person])
+          #  else: print ("no email")
 
     otchet = json.dumps(summary)
     smtp_sender.SendMessage(otchet, 'e.barnaev@altatec.ru')
