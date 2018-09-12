@@ -59,48 +59,48 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.vasiliev': 'a.vasiliev@altatec.ru',
            'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru'
           }
-e_barnaev = {sex = 'm',
+e_barnaev = {'sex' = 'm',
              joke_level = 1
             }
-a_sheviakov = {sex = 'm',
+a_sheviakov = {'sex' = 'm',
              joke_level = 1
             }
-m_orischenko = {sex = 'm',
+m_orischenko = {'sex' = 'm',
              joke_level = 1
             }
-y_chernov = {sex = 'm',
+y_chernov = {'sex' = 'm',
              joke_level = 1
             }
-e_zelenov = {sex = 'm',
+e_zelenov = {'sex' = 'm',
              joke_level = 1
             }
-e_ostretsov = {sex = 'm',
+e_ostretsov = {'sex' = 'm',
              joke_level = 1
             }
-z_besaev = {sex = 'm',
+z_besaev = {'sex' = 'm',
              joke_level = 1
             }
-v_sapunov = {sex = 'm',
+v_sapunov = {'sex' = 'm',
              joke_level = 1
             }
-d_shevyakova = {sex = 'm',
+d_shevyakova = {'sex' = 'm',
              joke_level = 1
             }
-a_vanushkin = {sex = 'm',
+a_vanushkin = {'sex' = 'm',
              joke_level = 1
             }
-a_konoplev = {sex = 'm',
+a_konoplev = {'sex' = 'm',
              joke_level = 1
             }
-a_v_vasiliev = {sex = 'm',
+a_v_vasiliev = {'sex' = 'm',
              joke_level = 1
             }
-l_vasiliev = {sex = 'm',
+l_vasiliev = {'sex' = 'm',
              joke_level = 1
             }
-a_vasiliev = {sex = 'm',
+a_vasiliev = {'sex' = 'm',
              joke_level = 1
             }
-e_rumiantseva{sex = 'w'
+e_rumiantseva{'sex' = 'w'
              joke_level = 1
              }
