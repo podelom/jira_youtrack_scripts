@@ -38,7 +38,8 @@ youtrack_tkp = {'e.barnaev': 'TKP',
                 'a.v.vasiliev': 'TKP',  
                 'y.chernov': 'TKP',
                 'a.makushev': 'MOBI',
-                'a.vasiliev': 'MOBI'
+                'a.vasiliev': 'MOBI',
+                'e.rumiantseva': 'TKP'
                 }
 sign_for_jokes = {
                 }
@@ -51,9 +52,55 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'z.besaev': 'z.besaev@altatec.ru',
            'v.sapunov': 'v.sapunov@altatec.ru',
            'd.shevyakova': 'd.sheviakova@altatec.ru',
-           'a.vanushkin': 'a.vanyushkin@altatec.ru',
+           'a.vanushkin': 'a.vanushkin@altatec.ru',
            'a.konoplev': 'a.konoplev@altatec.ru',
            'a.v.vasiliev': 'a.v.vasiliev@altatec.ru',
            'l.vasiliev': 'l.vasiliev@altatec.ru',
-           'a.vasiliev': 'a.vasiliev@altatec.ru'
+           'a.vasiliev': 'a.vasiliev@altatec.ru',
+           'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru'
           }
+e_barnaev = {sex = 'm',
+             joke_level = 1
+            }
+a_sheviakov = {sex = 'm',
+             joke_level = 1
+            }
+m_orischenko = {sex = 'm',
+             joke_level = 1
+            }
+y_chernov = {sex = 'm',
+             joke_level = 1
+            }
+e_zelenov = {sex = 'm',
+             joke_level = 1
+            }
+e_ostretsov = {sex = 'm',
+             joke_level = 1
+            }
+z_besaev = {sex = 'm',
+             joke_level = 1
+            }
+v_sapunov = {sex = 'm',
+             joke_level = 1
+            }
+d_shevyakova = {sex = 'm',
+             joke_level = 1
+            }
+a_vanushkin = {sex = 'm',
+             joke_level = 1
+            }
+a_konoplev = {sex = 'm',
+             joke_level = 1
+            }
+a_v_vasiliev = {sex = 'm',
+             joke_level = 1
+            }
+l_vasiliev = {sex = 'm',
+             joke_level = 1
+            }
+a_vasiliev = {sex = 'm',
+             joke_level = 1
+            }
+e_rumiantseva{sex = 'w'
+             joke_level = 1
+             }
