@@ -101,6 +101,6 @@ l_vasiliev = {'sex' :'m',
 a_vasiliev = {'sex' :'m',
              joke_level : 1
             }
-e_rumiantseva{'sex' :'w'
+e_rumiantseva{'sex' :'w',
              joke_level : 1
              }
