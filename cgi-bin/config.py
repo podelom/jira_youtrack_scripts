@@ -60,47 +60,47 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru'
           }
 e_barnaev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 a_sheviakov = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 m_orischenko = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 y_chernov = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 e_zelenov = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 e_ostretsov = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 z_besaev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 v_sapunov = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 d_shevyakova = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 a_vanushkin = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 a_konoplev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 a_v_vasiliev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 l_vasiliev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 a_vasiliev = {'sex' :'m',
-             joke_level = 1
+             joke_level : 1
             }
 e_rumiantseva{'sex' :'w'
-             joke_level = 1
+             joke_level : 1
              }
