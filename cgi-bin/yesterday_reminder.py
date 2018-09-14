@@ -45,26 +45,83 @@ if __name__ == "__main__":
 
     for person in summary:
         print ("Person: ", person)
-        if summary[person] >= 0 and summary[person] <= 1:
-            text_to_send = "За вчерашний день залогированных часов: {}. Если была вчера работа по проекту - прошу залогирвать".format(summary[person])
+        if summary[person] == 0:
             if person in config.emails:
+                for name in config.employee:
+                    if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('а', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
+                        text_to_send = "Не оставлено признаков присутствия, ты залогтилвал{} {} часов вчера.".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
+                        text_to_send = "Не оставлено признаков присутствия, ты залогтилвал{} {} часов вчера.".format('а', summary[person])
+                        print ("name: ", name['name']) 
+                        break
+                    else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif (summary[person] > 1 and summary[person] <= 3):
-            text_to_send = "За вчера залоггировано: {}. Если есть недологированное время, прошу его внести.".format(summary[person])
+        elif (summary[person] > 0 and summary[person] <= 3):
             if person in config.emails:
+                for name in config.employee:
+                    if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('а', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
+                        text_to_send = "Че-то маловато насыпал{} - {} часов вчера. А где еще? А если найду?".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
+                        text_to_send = "Че-то маловато насыпал{} - {} часов вчера. А где еще? А если найду?".format('а', summary[person])
+                        print ("name: ", name['name']) 
+                        break
+                    else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-        elif (summary[person] > 3 and summary[person] < 7):
-            text_to_send = "Сделано вчера немало: {}. Если есть недологированное время, прошу его внести.".format(summary[person])
+        elif (summary[person] > 3 and summary[person] < 8):
             if person in config.emails:
+                for name in config.employee:
+                    if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 0:
+                        text_to_send = "Вчера ты залогировал{} {} часов, сегодня не забудь.".format('а', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
+                        text_to_send = "Вчера ты залогировал{} - {} часов. А можешь больше?".format('', summary[person])
+                        print ("name: ", name['name'])
+                        break
+                    elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
+                        text_to_send = "Вчера ты залогировал{} - {} часов. А можешь больше?".format('а', summary[person])
+                        print ("name: ", name['name']) 
+                        break
+                    else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
-       # elif summary[person] >= 8:
-        #    text_to_send = "Вот это результат! {}!. Сегодня тоже не забудь :)".format(summary[person])
-         #   if person in config.emails:
-          #      smtp_sender.SendMessage(text_to_send, config.emails[person])
-          #  else: print ("no email")
+        elif summary[person] >= 8:
+            if person in config.emails:
+                    for name in config.employee:
+                        if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
+                            text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ся','', summary[person])
+                        if name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
+                            text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ась', 'ница', summary[person])
+                            print ("name: ", name['name'])
+                        else: print ("no employee")
+                smtp_sender.SendMessage(text_to_send, config.emails[person])
+            else: print ("no email")
 
     otchet = json.dumps(summary)
     smtp_sender.SendMessage(otchet, 'e.barnaev@altatec.ru')
