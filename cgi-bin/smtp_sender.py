@@ -9,7 +9,7 @@ from email.message import EmailMessage
 def SendMessage(text_to_send, email):
     refused = {}
     _recepients_emails = email
-    _sender_name = 'Любовь Ворклоговна'
+    _sender_name = 'Любовь Ворклогова'
     _sender_address = 'lyuboff_worklogova@altatec.ru'
     _subject = 'Я - твоя любимая Напоминалочка'
 

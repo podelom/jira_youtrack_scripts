@@ -22,8 +22,8 @@ jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
              'e.ostretsov': ['bus', 'ugd', 'ugds'],
              'a.v.vasiliev': ['bus', 'ugd', 'ugds'],
              'a.makushev': ['bus', 'ugd', 'ugds'],
-             'a.vanyushkin': ['bus', 'ugd', 'ugds'],
-             'd.shevyakova': ['bus', 'ugd', 'ugds'],
+             'a.vanushkin': ['bus', 'ugd', 'ugds'],
+             'd.sheviakova': ['bus', 'ugd', 'ugds'],
              'e.ostretsov': ['bus', 'ugd', 'ugds'],
              'v.sapunov': ['bus', 'ugd', 'ugds'],
              'z.besaev': ['bus', 'ugd', 'ugds', 'doc'],
@@ -43,6 +43,7 @@ youtrack_tkp = {'e.barnaev': 'TKP',
                 }
 sign_for_jokes = {
                 }
+emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
            'm.orischenko': 'm.orischenko@altatec.ru',
@@ -51,56 +52,99 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'e.ostretsov': 'e.ostretsov@altatec.ru',
            'z.besaev': 'z.besaev@altatec.ru',
            'v.sapunov': 'v.sapunov@altatec.ru',
-           'd.shevyakova': 'd.sheviakova@altatec.ru',
+           'd.sheviakova': 'd.sheviakova@altatec.ru',
            'a.vanushkin': 'a.vanushkin@altatec.ru',
            'a.konoplev': 'a.konoplev@altatec.ru',
            'a.v.vasiliev': 'a.v.vasiliev@altatec.ru',
            'l.vasiliev': 'l.vasiliev@altatec.ru',
            'a.vasiliev': 'a.vasiliev@altatec.ru',
            'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru'
+           'a.makushev': 'a.makushev@altatec.ru'
           }
-e_barnaev = {'sex' :'m',
+
+employee = [{
+             'name': 'e.barnaev',
+             'sex' : 'm',
+             'joke_level' : 1
+            },
+            {
+             'name': 'a.sheviakov',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'm.orischenko',
+             'sex' : 'm',
+             'joke_level' : 1
+            },
+            {
+             'name': 'e.ostretsov',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'e.zelenov',
+             'sex' : 'm',
+             'joke_level' : 1
+            },
+            {
+             'name': 'z.besaev',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'v.sapunov',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'd.sheviakova',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'a.vanushkin',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'a.konoplev',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'a.v.vasiliev',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'l.vasiliev',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'a.vasiliev',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'y.chernov',
+             'sex' : 'm',
+             'joke_level' : 0
+            },
+            {
+             'name': 'e.rumiantseva',
+             'sex' : 'w',
+             'joke_level' : 0
+            },
+            {
+             'name': 'n.zvereva',
+             'sex' : 'w',
+             'joke_level' : 0
+            }
+            {
+             'name': 'a.makushev',
+             'sex' : 'm',
              'joke_level' : 1
             }
-a_sheviakov = {'sex' :'m',
-             'joke_level' : 1
-            }
-m_orischenko = {'sex' :'m',
-             'joke_level' : 1
-            }
-y_chernov = {'sex' :'m',
-             'joke_level' : 1
-            }
-e_zelenov = {'sex' :'m',
-             'joke_level' : 1
-            }
-e_ostretsov = {'sex' :'m',
-             'joke_level' : 1
-            }
-z_besaev = {'sex' :'m',
-             'joke_level' : 1
-            }
-v_sapunov = {'sex' :'m',
-             'joke_level' : 1
-            }
-d_shevyakova = {'sex' :'m',
-             'joke_level' : 1
-            }
-a_vanushkin = {'sex' :'m',
-             'joke_level' : 1
-            }
-a_konoplev = {'sex' :'m',
-             'joke_level' : 1
-            }
-a_v_vasiliev = {'sex' :'m',
-             'joke_level' : 1
-            }
-l_vasiliev = {'sex' :'m',
-             'joke_level' : 1
-            }
-a_vasiliev = {'sex' :'m',
-             'joke_level' : 1
-            }
-e_rumiantseva = {'sex' :'w',
-             'joke_level' : 1
-             }
+            ]
