@@ -88,7 +88,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                #smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
             if person in config.emails:
@@ -110,7 +110,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                #smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
         elif summary[person] >= 8:
             if person in config.emails:
@@ -122,7 +122,7 @@ if __name__ == "__main__":
                             text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('а', 'ница', summary[person])
                             print ("name: ", name['name'])
                         else: print ("no employee")
-                    #smtp_sender.SendMessage(text_to_send, config.emails[person])
+                    smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
     
     otchet = json.dumps(summary)
