@@ -116,7 +116,7 @@ if __name__ == "__main__":
             if person in config.emails:
                     for name in config.employee:
                         if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
-                            text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('а','', summary[person])
+                            text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('','', summary[person])
                             print ("Человек несмеющийся: ", name['name'])
                         if name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
                             text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('а', 'ница', summary[person])
