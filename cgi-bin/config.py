@@ -141,7 +141,7 @@ employee = [{
              'name': 'n.zvereva',
              'sex' : 'w',
              'joke_level' : 0
-            }
+            },
             {
              'name': 'a.makushev',
              'sex' : 'm',
