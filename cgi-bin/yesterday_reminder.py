@@ -113,12 +113,12 @@ if __name__ == "__main__":
             else: print ("no email")
         elif summary[person] >= 8:
             if person in config.emails:
-                    for name in config.employee:
-                        if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
-                            text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ся','', summary[person])
-                        if name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
-                            text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ась', 'ница', summary[person])
-                            print ("name: ", name['name'])
+                for name in config.employee:
+                    if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
+                        text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ся','', summary[person])
+                    if name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
+                        text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ась', 'ница', summary[person])
+                        print ("name: ", name['name'])
                     else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
             else: print ("no email")
