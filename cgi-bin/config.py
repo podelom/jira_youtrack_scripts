@@ -43,14 +43,14 @@ youtrack_tkp = {'e.barnaev': 'TKP',
                 }
 sign_for_jokes = {
                 }
-emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
+#emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
            'm.orischenko': 'm.orischenko@altatec.ru',
            'y.chernov': 'y.chernov@altatec.ru',
            'e.zelenov': 'e.zelenov@altatec.ru',
            'e.ostretsov': 'e.ostretsov@altatec.ru',
-           'z.besaev': 'z.besaev@altatec.ru',
+           #'z.besaev': 'z.besaev@altatec.ru',
            'v.sapunov': 'v.sapunov@altatec.ru',
            'd.sheviakova': 'd.sheviakova@altatec.ru',
            'a.vanushkin': 'a.vanushkin@altatec.ru',

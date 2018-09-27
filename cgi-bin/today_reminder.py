@@ -67,6 +67,7 @@ if __name__ == "__main__":
                         break
                     else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
+                break
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
             if person in config.emails:
@@ -89,6 +90,7 @@ if __name__ == "__main__":
                         break
                     else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
+                break
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
             if person in config.emails:
@@ -111,6 +113,7 @@ if __name__ == "__main__":
                         break
                     else: print ("no employee")
                 smtp_sender.SendMessage(text_to_send, config.emails[person])
+                break
             else: print ("no email")
         elif summary[person] >= 8:
             if person in config.emails:
@@ -123,6 +126,7 @@ if __name__ == "__main__":
                             print ("name: ", name['name'])
                         else: print ("no employee")
                     smtp_sender.SendMessage(text_to_send, config.emails[person])
+                    break
             else: print ("no email")
     
     otchet = json.dumps(summary)
