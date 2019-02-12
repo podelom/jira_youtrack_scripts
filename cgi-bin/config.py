@@ -12,7 +12,8 @@ jira_altatec = {'e.barnaev': ['dgpbus', 'rotek', 'rustek', 'TKP'],
                 'm.orischenko': ['ROTEK', 'ROTEK', 'QPVVV', 'QPPROVIDER', 'QPPROC', 'TKP'],
                 'y.chernov': ['SAB', 'ROTEK', 'VVV', 'QPPROC', 'DRFID', 'TKP'],
                 'a.sheviakov': ['VIDEOAA', 'SA', 'SAB', 'RUSTEK', 'QPADM', 'KAMI', 'JO', 'FTS', 'DRFID', 'TKP'],
-                'z.besaev': ['KAMI', 'FTS', 'DRFID', 'DOC', 'ANTEY', 'TKP']
+                'z.besaev': ['KAMI', 'FTS', 'DRFID', 'DOC', 'ANTEY', 'TKP'],
+                'e.rumiantseva': ['TKP']
                 }
 #DGPBUS, RUSTEK, WH, VIDEOAA, SDXOPASS, SA, ROTEK, QPPROVIDER, QPPROC, MEGA, QPADM, KAMI, FTS, DRFID, DOC
 jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
