@@ -24,14 +24,13 @@ jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
              'a.makushev': ['bus', 'ugd', 'ugds'],
              'a.vanushkin': ['bus', 'ugd', 'ugds'],
              'd.sheviakova': ['bus', 'ugd', 'ugds'],
-             'e.ostretsov': ['bus', 'ugd', 'ugds'],
              'v.sapunov': ['bus', 'ugd', 'ugds'],
              'z.besaev': ['bus', 'ugd', 'ugds', 'doc'],
              'y.chernov': ['bus', 'ugd', 'ugds'],
-             'e.ostretsov': ['bus', 'ugd', 'ugds'],
              'l.vasiliev': ['bus'],
              'a.sheviakov': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM']
              }
+'''             
 youtrack_tkp = {'e.barnaev': 'TKP',
                 'm.orischenko': 'TKP',
                 'e.ostretsov': 'TKP',
@@ -41,9 +40,11 @@ youtrack_tkp = {'e.barnaev': 'TKP',
                 'a.vasiliev': 'MOBI',
                 'e.rumiantseva': 'TKP'
                 }
+'''
 sign_for_jokes = {
                 }
-#emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
+emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
+'''
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
            'm.orischenko': 'm.orischenko@altatec.ru',
@@ -61,7 +62,7 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru',
            'a.makushev': 'a.makushev@altatec.ru'
           }
-
+'''
 employee = [{
              'name': 'e.barnaev',
              'sex' : 'm',

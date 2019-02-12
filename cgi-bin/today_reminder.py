@@ -12,8 +12,9 @@ import json
 if __name__ == "__main__":
     jira_dgp = config.jira_dgp
     jira_altatec = config.jira_altatec
-    youtrack_tkp = config.youtrack_tkp
+    #youtrack_tkp = config.youtrack_tkp
     summary = {}
+    texttype = "plain"
     for name in jira_dgp:
         person = name
         projects = jira_dgp[name]
@@ -32,6 +33,7 @@ if __name__ == "__main__":
         else:
             summary.update(altatec_worklog_today)
 
+    '''
     for name in youtrack_tkp:
         person = name
         projects = youtrack_tkp[name]
@@ -43,7 +45,7 @@ if __name__ == "__main__":
             summary[person] += tkp_worklog_today[person]
         else:
             summary.update(altatec_worklog_today)
-
+        '''
     for person in summary:
         print ("Person: ", person)
         if summary[person] == 0:
@@ -66,7 +68,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
@@ -89,7 +91,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
@@ -112,7 +114,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif summary[person] >= 8:
@@ -125,9 +127,9 @@ if __name__ == "__main__":
                             text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('а', 'ница', summary[person])
                             print ("name: ", name['name'])
                         else: print ("no employee")
-                    smtp_sender.SendMessage(text_to_send, config.emails[person])
+                    smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                     break
             else: print ("no email")
     
     otchet = json.dumps(summary)
-    smtp_sender.SendMessage(otchet, 'e.barnaev@altatec.ru')
+    smtp_sender.SendMessage(otchet, 'e.barnaev@altatec.ru', texttype)

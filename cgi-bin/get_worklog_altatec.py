@@ -4,9 +4,25 @@ from jira import JIRA, JIRAError
 import get_issues_updated_altatec
 from datetime import datetime, timedelta
 import urllib3
+import socket
 
-# jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth#3'), options = {'server': 'https://jira.i.altatec.ru', 'verify':'jira_altatec.pem'})
-jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth@2Mm'), options = {'server': 'https://jira.i.altatec.ru', 'verify': False})
+REMOTE_SERVER = "jira.i.altatec.ru"
+def is_connected():
+  try:
+    host = socket.gethostbyname(REMOTE_SERVER)
+    s = socket.create_connection((host, 443), 2)
+    return True
+  except:
+     pass
+  return False
+print (is_connected())
+
+if is_connected() == True:
+    # jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth#3'), options = {'server': 'https://jira.i.altatec.ru', 'verify':'jira_altatec.pem'})
+    jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth@2Mm'), options = {'server': 'https://jira.i.altatec.ru', 'verify': False})
+else:
+    print ("Жира недоступна")
+
 fullnames = {}
 
 urllib3.disable_warnings()

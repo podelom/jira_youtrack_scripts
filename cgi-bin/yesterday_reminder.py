@@ -13,6 +13,7 @@ if __name__ == "__main__":
     jira_altatec = config.jira_altatec
     youtrack_tkp = config.youtrack_tkp
     summary = {}
+    texttype = "plain"
     for name in jira_dgp:
         person = name
         projects = jira_dgp[name]
@@ -65,7 +66,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
@@ -88,7 +89,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
@@ -111,7 +112,7 @@ if __name__ == "__main__":
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
         elif summary[person] >= 8:
@@ -123,7 +124,7 @@ if __name__ == "__main__":
                         text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ась', 'ница', summary[person])
                         print ("name: ", name['name'])
                     else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person])
+                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
                 break
             else: print ("no email")
 

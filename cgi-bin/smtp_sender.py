@@ -6,7 +6,7 @@ from email.header import Header
 from  email.utils import formataddr
 from email.message import EmailMessage
 
-def SendMessage(text_to_send, email):
+def SendMessage(text_to_send, email, texttype):
     refused = {}
     _recepients_emails = email
     _sender_name = 'Любовь Ворклогова'
@@ -14,7 +14,7 @@ def SendMessage(text_to_send, email):
     _subject = 'Я - твоя любимая Напоминалочка'
 
     msg = EmailMessage()
-    msg.set_content(text_to_send)
+    msg.set_content(text_to_send, subtype=texttype)
     msg['Subject'] = _subject
     msg['From'] = formataddr((_sender_name, _sender_address))
     msg['To'] = _recepients_emails
@@ -30,7 +30,7 @@ def SendMessage(text_to_send, email):
         refused = e.recipients
         print ('error sending mail')
     except smtplib.SMTPException as e:
-        print >> 'got', e.__class__
+        print ('got', e.__class__)
         errcode = getattr(e, 'smtp_code', -1)
         errmsg = getattr(e, 'smtp_error', 'ignore')
         for r in rcpttos:
