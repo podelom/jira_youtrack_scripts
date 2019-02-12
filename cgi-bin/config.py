@@ -43,8 +43,8 @@ youtrack_tkp = {'e.barnaev': 'TKP',
 '''
 sign_for_jokes = {
                 }
-emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
-'''
+#emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
+
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
            'm.orischenko': 'm.orischenko@altatec.ru',
@@ -57,12 +57,12 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.vanushkin': 'a.vanushkin@altatec.ru',
            'a.konoplev': 'a.konoplev@altatec.ru',
            'a.v.vasiliev': 'a.v.vasiliev@altatec.ru',
-           'l.vasiliev': 'l.vasiliev@altatec.ru',
+           #'l.vasiliev': 'l.vasiliev@altatec.ru',
            'a.vasiliev': 'a.vasiliev@altatec.ru',
-           'e.rumiantseva@altatec.ru': 'e.rumiantseva@altatec.ru',
+           'e.rumiantseva': 'e.rumiantseva@altatec.ru',
            'a.makushev': 'a.makushev@altatec.ru'
           }
-'''
+
 employee = [{
              'name': 'e.barnaev',
              'sex' : 'm',

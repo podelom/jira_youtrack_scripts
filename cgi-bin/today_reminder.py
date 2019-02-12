@@ -60,11 +60,11 @@ if __name__ == "__main__":
                         print ("name: ", name['name'])
                         break
                     elif name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 1:
-                        text_to_send = "Не оставлено признаков присутствия, ты залогтилвал{} {} часов.".format('', summary[person])
+                        text_to_send = "Не оставлено признаков присутствия, ты залоггировал{} {} часов.".format('', summary[person])
                         print ("name: ", name['name'])
                         break
                     elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
-                        text_to_send = "Не оставлено признаков присутствия, ты залогтилвал{} {} часов.".format('а', summary[person])
+                        text_to_send = "Не оставлено признаков присутствия, ты залоггировал{} {} часов.".format('а', summary[person])
                         print ("name: ", name['name']) 
                         break
                     else: print ("no employee")
