@@ -1,18 +1,18 @@
 #!usr/bin/python3
 
-jira_altatec = {'e.barnaev': ['dgpbus', 'rotek', 'rustek'],
-                'e.zelenov': ['dgpbus', 'DEPTRANS-RFID', 'DGPRFID', 'WH', 'VIDEOAA', 'KAMI', 'FTS', 'DOC', 'RFIDCS', 'DRFID' ],
+jira_altatec = {'e.barnaev': ['dgpbus', 'rotek', 'rustek', 'TKP'],
+                'e.zelenov': ['dgpbus', 'DEPTRANS-RFID', 'DGPRFID', 'WH', 'VIDEOAA', 'KAMI', 'FTS', 'DOC', 'RFIDCS', 'DRFID', 'TKP'],
                 'd.sheviakova': ['ROTEK', 'KAMI', 'QPPROVIDER', 'FTS'],
                 'l.vasiliev': ['VVV', 'RUSTEK'],
-                'a.konoplev': ['ROTEK', 'QPPROC', 'DRFID', 'DGPRFID'],
-                'a.vasiliev': ['CRPT'],
+                'a.konoplev': ['ROTEK', 'QPPROC', 'DRFID', 'DGPRFID', 'TKP'],
+                'a.vasiliev': ['CRPT', 'TKP'],
                 'a.makushev': ['WH', 'LAS', 'DRFID'],
                 's.suhorukov': ['ROTEK'],
-                'a.v.vasiliev': ['RUSTEK'],
-                'm.orischenko': ['ROTEK', 'ROTEK', 'QPVVV', 'QPPROVIDER', 'QPPROC'],
-                'y.chernov': ['SAB', 'ROTEK', 'VVV', 'QPPROC', 'DRFID'],
-                'a.sheviakov': ['VIDEOAA', 'SA', 'SAB', 'RUSTEK', 'QPADM', 'KAMI', 'JO', 'FTS', 'DRFID'],
-                'z.besaev': ['KAMI', 'FTS', 'DRFID', 'DOC', 'ANTEY']
+                'a.v.vasiliev': ['RUSTEK', 'TKP'],
+                'm.orischenko': ['ROTEK', 'ROTEK', 'QPVVV', 'QPPROVIDER', 'QPPROC', 'TKP'],
+                'y.chernov': ['SAB', 'ROTEK', 'VVV', 'QPPROC', 'DRFID', 'TKP'],
+                'a.sheviakov': ['VIDEOAA', 'SA', 'SAB', 'RUSTEK', 'QPADM', 'KAMI', 'JO', 'FTS', 'DRFID', 'TKP'],
+                'z.besaev': ['KAMI', 'FTS', 'DRFID', 'DOC', 'ANTEY', 'TKP']
                 }
 #DGPBUS, RUSTEK, WH, VIDEOAA, SDXOPASS, SA, ROTEK, QPPROVIDER, QPPROC, MEGA, QPADM, KAMI, FTS, DRFID, DOC
 jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
