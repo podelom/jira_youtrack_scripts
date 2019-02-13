@@ -6,14 +6,15 @@ jira_altatec = {'e.barnaev': ['dgpbus', 'rotek', 'rustek', 'TKP'],
                 'l.vasiliev': ['VVV', 'RUSTEK'],
                 'a.konoplev': ['ROTEK', 'QPPROC', 'DRFID', 'DGPRFID', 'TKP'],
                 'a.vasiliev': ['CRPT', 'TKP'],
-                'a.makushev': ['WH', 'LAS', 'DRFID'],
+                'a.makushev': ['WH', 'LAS', 'DRFID', 'VideoAA', 'VIDEO'],
                 's.suhorukov': ['ROTEK'],
                 'a.v.vasiliev': ['RUSTEK', 'TKP'],
                 'm.orischenko': ['ROTEK', 'ROTEK', 'QPVVV', 'QPPROVIDER', 'QPPROC', 'TKP'],
                 'y.chernov': ['SAB', 'ROTEK', 'VVV', 'QPPROC', 'DRFID', 'TKP'],
                 'a.sheviakov': ['VIDEOAA', 'SA', 'SAB', 'RUSTEK', 'QPADM', 'KAMI', 'JO', 'FTS', 'DRFID', 'TKP'],
                 'z.besaev': ['KAMI', 'FTS', 'DRFID', 'DOC', 'ANTEY', 'TKP'],
-                'e.rumiantseva': ['TKP']
+                'e.rumiantseva': ['TKP'],
+                'n.zvereva': ['TKP', 'VIDEO', 'VideoAA', 'MEGA', 'TSTS']
                 }
 #DGPBUS, RUSTEK, WH, VIDEOAA, SDXOPASS, SA, ROTEK, QPPROVIDER, QPPROC, MEGA, QPADM, KAMI, FTS, DRFID, DOC
 jira_dgp = {'e.barnaev': ['bus', 'ugd', 'ugds', 'sa', 'DGPADM'],
@@ -44,8 +45,10 @@ youtrack_tkp = {'e.barnaev': 'TKP',
 '''
 sign_for_jokes = {
                 }
-#emails = {'e.barnaev': 'e.barnaev@altatec.ru'}
-
+emails = {
+    'e.barnaev': 'e.barnaev@altatec.ru',
+    }
+'''
 emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'a.sheviakov': 'a.sheviakov@altatec.ru',
            'm.orischenko': 'm.orischenko@altatec.ru',
@@ -61,9 +64,10 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            #'l.vasiliev': 'l.vasiliev@altatec.ru',
            'a.vasiliev': 'a.vasiliev@altatec.ru',
            'e.rumiantseva': 'e.rumiantseva@altatec.ru',
+           'n.zvereva': 'n.zvereva@altatec.ru',
            'a.makushev': 'a.makushev@altatec.ru'
           }
-
+'''
 employee = [{
              'name': 'e.barnaev',
              'sex' : 'm',

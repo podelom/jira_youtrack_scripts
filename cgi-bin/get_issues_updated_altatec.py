@@ -26,7 +26,7 @@ def Get_Currnet_Month_Updated_Issues(person, projects):
         projects_list = ", ".join(projects)
         base_request = "worklogDate >= startOfMonth() and project in ({}) and worklogAuthor = {}".format(projects_list, person)
         all_proj_current_month = jira.search_issues(base_request)
-        print("\ncurrent month updated: ",all_proj_current_month)
+        #print("\ncurrent month updated: ",all_proj_current_month)
         return(all_proj_current_month)
     else:
         return()
@@ -36,7 +36,7 @@ def Get_Previous_Month_Updated_Issues(person, projects):
         projects_list = ", ".join(projects)
         base_request = "worklogDate <= startOfMonth() and worklogDate >= startOfMonth(-1) and project in ({}) and worklogAuthor = {}".format(projects_list, person)
         all_proj_previous_month = jira.search_issues(base_request)
-        print("\nprevious month updated: ",all_proj_previous_month)
+        #print("\nprevious month updated: ",all_proj_previous_month)
         return(all_proj_previous_month)
     else:
         return()
@@ -46,7 +46,7 @@ def Get_Today_Updated_Issues(person, projects):
         projects_list = ", ".join(projects)
         base_request = "worklogDate >= startOfDay() and project in ({}) and worklogAuthor = {}".format(projects_list, person)
         all_proj_today_updated = jira.search_issues(base_request)
-        print("\ntoday updated: ", all_proj_today_updated)
+        #print("\ntoday updated: ", all_proj_today_updated)
         return(all_proj_today_updated)
     else:
         return()
@@ -56,12 +56,12 @@ def Get_Yesterday_Updated_Issues(person, projects):
         projects_list = ", ".join(projects)
         base_request = "worklogDate >= startOfDay(-1) and worklogDate <= startOfDay() and project in ({}) and worklogAuthor = {}".format(projects_list, person)
         all_proj_yesterday_updated = jira.search_issues(base_request)
-        print("\nyesterday updated: ",all_proj_yesterday_updated)
+        #print("\nyesterday updated: ",all_proj_yesterday_updated)
         return(all_proj_yesterday_updated)
     else:
         return()
 
-Get_Currnet_Month_Updated_Issues('e.barnaev', ['dgpbus', 'rotek', 'rustek'])
-Get_Previous_Month_Updated_Issues('e.barnaev', ['dgpbus', 'rotek', 'rustek'])
+#Get_Currnet_Month_Updated_Issues('e.barnaev', ['dgpbus', 'rotek', 'rustek'])
+#Get_Previous_Month_Updated_Issues('e.barnaev', ['dgpbus', 'rotek', 'rustek'])
 #Get_Today_Updated_Issues()
 #Get_Yesterday_Updated_Issues()
