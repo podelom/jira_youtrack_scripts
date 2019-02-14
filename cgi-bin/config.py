@@ -1,12 +1,12 @@
 #!usr/bin/python3
 
 jira_altatec = {'e.barnaev': ['dgpbus', 'rotek', 'rustek', 'TKP'],
-                'e.zelenov': ['dgpbus', 'DEPTRANS-RFID', 'DGPRFID', 'WH', 'VIDEOAA', 'KAMI', 'FTS', 'DOC', 'RFIDCS', 'DRFID', 'TKP'],
+                'e.zelenov': ['dgpbus', 'DEPTRANS-RFID', 'DGPRFID', 'WH', 'VIDEOAA', 'KAMI', 'FTS', 'DOC', 'RFIDCS', 'DRFID', 'TKP', 'MOBI'],
                 'd.sheviakova': ['ROTEK', 'KAMI', 'QPPROVIDER', 'FTS'],
                 'l.vasiliev': ['VVV', 'RUSTEK', 'GEORGIA'],
                 'a.konoplev': ['ROTEK', 'QPPROC', 'DRFID', 'DGPRFID', 'TKP'],
-                'a.vasiliev': ['CRPT', 'TKP'],
-                'a.makushev': ['WH', 'LAS', 'DRFID', 'VideoAA', 'VIDEO'],
+                'a.vasiliev': ['CRPT', 'TKP', 'MOBI'],
+                'a.makushev': ['WH', 'LAS', 'DRFID', 'VideoAA', 'VIDEO', 'WCASH', 'MOBI'],
                 's.suhorukov': ['ROTEK'],
                 'a.v.vasiliev': ['RUSTEK', 'TKP'],
                 'm.orischenko': ['ROTEK', 'ROTEK', 'QPVVV', 'QPPROVIDER', 'QPPROC', 'TKP'],
@@ -142,12 +142,12 @@ employee = [{
             {
              'name': 'e.rumiantseva',
              'sex' : 'w',
-             'joke_level' : 0
+             'joke_level' : 1
             },
             {
              'name': 'n.zvereva',
              'sex' : 'w',
-             'joke_level' : 0
+             'joke_level' : 1
             },
             {
              'name': 'a.makushev',
