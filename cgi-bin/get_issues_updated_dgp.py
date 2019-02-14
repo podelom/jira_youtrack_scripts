@@ -4,8 +4,8 @@ from jira import JIRA
 import urllib3
 urllib3.disable_warnings()
 
-jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'certs.pem'})
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
+#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'certs.pem'})
+jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
 #jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':False})
 def Get_Currnet_Month_Updated_Issues(person, projects):
     projects_list = ", ".join(projects)
