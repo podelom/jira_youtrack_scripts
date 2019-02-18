@@ -6,6 +6,15 @@ import get_worklog_dgp
 import config
 import smtp_sender
 import json
+import logging
+
+#logging
+logger = logging.getLogger("todayWorklogReminder")
+logger.setLevel(logging.INFO)
+fh = logging.FileHandler("worklogReminder.log")
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+logger.addHandler(fh)
 
 if __name__ == "__main__":
     print ("I'm here")
@@ -46,7 +55,7 @@ if __name__ == "__main__":
             summary.update(altatec_worklog_today)
         '''
     for person in summary:
-        print ("Person: ", person)
+        print ("Person: ", person, " - " ,summary[person])
         if summary[person] == 0:
             if person in config.emails:
                 for item in config.employee:
@@ -66,6 +75,7 @@ if __name__ == "__main__":
                         text_to_send = "Не оставлено признаков присутствия, ты залогировал{} {} часов.".format('а', summary[person])
                         print ("name: ", item['name']) 
                         break
+                logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
                 smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
@@ -87,6 +97,7 @@ if __name__ == "__main__":
                         text_to_send = "Че-то маловато насыпал{} - {} часов. А где еще? А если найду?".format('а', summary[person])
                         print ("name: ", item['name']) 
                         break
+                logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
                 smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
@@ -108,6 +119,7 @@ if __name__ == "__main__":
                         text_to_send = "Ты уже залогировал{} - {} часов. А можешь ли больше?".format('а', summary[person])
                         print ("name: ", item['name']) 
                         break
+                logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
                 smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif summary[person] >= 8:
@@ -119,6 +131,7 @@ if __name__ == "__main__":
                         if item['name'] == person and item['sex'] == 'w' and item['joke_level'] == 1:
                             text_to_send = "Ты славно поработал{}, приятель{}! {} часов - это сильно!".format('а', 'ница', summary[person])
                             print ("name: ", item['name'])
+                    logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
                     smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
     

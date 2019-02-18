@@ -6,7 +6,15 @@ import get_worklog_dgp
 import config
 import smtp_sender
 import json
+import logging
 
+#logging
+logger = logging.getLogger("yesterdayWorklogReminder")
+logger.setLevel(logging.INFO)
+fh = logging.FileHandler("worklogReminder.log")
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+logger.addHandler(fh)
 
 if __name__ == "__main__":
     jira_dgp = config.jira_dgp
@@ -65,8 +73,13 @@ if __name__ == "__main__":
                         text_to_send = "Не оставлено признаков присутствия, ты залогировал{} {} часов вчера.".format('а', summary[person])
                         print ("name: ", name['name']) 
                         break
-                    else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
+                    else: 
+                        print ("no employee: ", person)
+                        logger.warning("{} is not in the list and will not receive any worklog".format(person))
+                        text_to_send = ""
+                if text_to_send != "":
+                    logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
+                    smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
             if person in config.emails:
@@ -87,8 +100,13 @@ if __name__ == "__main__":
                         text_to_send = "Че-то маловато насыпал{} - {} часов вчера. А где еще? А если найду?".format('а', summary[person])
                         print ("name: ", name['name']) 
                         break
-                    else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
+                    else: 
+                        print ("no employee: ", person)
+                        logger.warning("{} is not in the list and will not receive any worklog".format(person))
+                        text_to_send = ""
+                if text_to_send != "":
+                    logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
+                    smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
             if person in config.emails:
@@ -109,8 +127,13 @@ if __name__ == "__main__":
                         text_to_send = "Вчера ты залогировал{} - {} часов. А можешь больше?".format('а', summary[person])
                         print ("name: ", name['name']) 
                         break
-                    else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
+                    else: 
+                        print ("no employee: ", person)
+                        logger.warning("{} is not in the list and will not receive any worklog".format(person))
+                        text_to_send = ""
+                if text_to_send != "":
+                    logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
+                    smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
         elif summary[person] >= 8:
             if person in config.emails:
@@ -120,8 +143,13 @@ if __name__ == "__main__":
                     if name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 1:
                         text_to_send = "А ты вчера упорол{}, приятель{}! {} часов - это сильно!".format('ась', 'ница', summary[person])
                         print ("name: ", name['name'])
-                    else: print ("no employee")
-                smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
+                    else: 
+                        print ("no employee: ", person)
+                        logger.warning("{} is not in the list and will not receive any worklog".format(person))
+                        text_to_send = ""
+                if text_to_send != "":
+                    logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
+                    smtp_sender.SendMessage(text_to_send, config.emails[person], texttype)
             else: print ("no email")
 
     otchet = json.dumps(summary)

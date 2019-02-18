@@ -45,7 +45,7 @@ youtrack_tkp = {'e.barnaev': 'TKP',
 '''
 sign_for_jokes = {
                 }
-'''
+
 emails = {
     'e.barnaev': 'e.barnaev@altatec.ru',
     }
@@ -68,7 +68,7 @@ emails = {'e.barnaev': 'e.barnaev@altatec.ru',
            'n.zvereva': 'n.zvereva@altatec.ru',
            'a.makushev': 'a.makushev@altatec.ru'
           }
-
+'''
 employee = [{
              'name': 'e.barnaev',
              'sex' : 'm',
