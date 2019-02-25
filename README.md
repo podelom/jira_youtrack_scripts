@@ -1,2 +1,2 @@
-# jira_youtrack_scripts
-scripts to sync jira &lt;-> youtrack and back
+# worklog scrips
+get worklog from youtrack/jira and send it to employess
