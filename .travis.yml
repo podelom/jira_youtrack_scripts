@@ -1,3 +1,15 @@
-before_install:
-- openssl aes-256-cbc -K $encrypted_9623b27c72c4_key -iv $encrypted_9623b27c72c4_iv
-  -in travis_key.enc -out travis_key -d
+#before_install:
+#- openssl aes-256-cbc -K $encrypted_9623b27c72c4_key -iv $encrypted_9623b27c72c4_iv
+#  -in travis_key.enc -out travis_key -d
+
+install: true #мы не будем устанавливать дополнительные зависимости и проводить тесты
+sudo: false
+branches: #деплой проекта будет только при изменениях в ветке master
+  only:
+      - master
+script:
+    - openssl aes-256-cbc -K $encrypted_9623b27c72c4_key -iv $encrypted_9623b27c72c4_iv -in travis_key.enc -out travis_key -d
+    - eval "$(ssh-agent -s)"
+    - chmod 600 /tmp/travis_key
+    - ssh-add /tmp/travis_key
+    - ssh -o "StrictHostKeyChecking no" ansible@95.213.251.28 'ansible-playbook playbook.yml' 
