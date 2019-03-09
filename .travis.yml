@@ -12,4 +12,4 @@ script:
     - eval "$(ssh-agent -s)"
     - chmod 600 /tmp/travis_key
     - ssh-add /tmp/travis_key
-    - ssh -o "StrictHostKeyChecking no" ansible@95.213.251.28 'ansible-playbook playbook.yml' 
+    - ssh -o "StrictHostKeyChecking no" ansible@95.213.251.28 'ansible-playbook ansible/playbook.yml' 
