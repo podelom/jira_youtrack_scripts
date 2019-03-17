@@ -6,10 +6,10 @@ from email.header import Header
 from  email.utils import formataddr
 from email.message import EmailMessage
 import securer_templates
-import smtp_details_templates_templates_templates_templates_prod
+import smtp_details_templates
 
 smtp_server = securer_templates.smtp_server['link']
-template = smtp_details_templates_templates_templates_templates_prod.tmpl1
+template = smtp_details_templates_templates_templates_prod.tmpl1
 def SendMessage(text_to_send, email, texttype):
     refused = {}
     recepients_emails = email
