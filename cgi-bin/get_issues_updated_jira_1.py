@@ -3,9 +3,14 @@
 from jira import JIRA
 import urllib3
 import socket
+import securer_prod
+
 urllib3.disable_warnings()
 
-REMOTE_SERVER = "jira.i.altatec.ru"
+
+jira_auth = securer_prod.jira_credentials_2
+
+REMOTE_SERVER = jira_auth['link']
 def is_connected():
   try:
     host = socket.gethostbyname(REMOTE_SERVER)
@@ -16,8 +21,7 @@ def is_connected():
   return False
 
 if is_connected() == True:
-    # jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth#3'), options = {'server': 'https://jira.i.altatec.ru', 'verify':'jira_altatec.pem'})
-    jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth@2Mm'), options = {'server': 'https://jira.i.altatec.ru', 'verify': False})
+    jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify': False})
 else:
     print ("Жира недоступна")
 

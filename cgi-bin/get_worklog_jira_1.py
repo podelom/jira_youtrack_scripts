@@ -1,12 +1,15 @@
 #!/usr/local/bin/python3
 ##!C:\Python36\python.exe
 from jira import JIRA, JIRAError
-import get_issues_updated_altatec
+import get_issues_updated_jira_1
 from datetime import datetime, timedelta
 import urllib3
 import socket
+import securer_prod
 
-REMOTE_SERVER = "jira.i.altatec.ru"
+jira_auth = securer_prod.jira_credentials_2
+
+REMOTE_SERVER = jira_auth['link']
 def is_connected():
   try:
     host = socket.gethostbyname(REMOTE_SERVER)
@@ -18,8 +21,7 @@ def is_connected():
 print (is_connected())
 
 if is_connected() == True:
-    # jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth#3'), options = {'server': 'https://jira.i.altatec.ru', 'verify':'jira_altatec.pem'})
-    jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth@2Mm'), options = {'server': 'https://jira.i.altatec.ru', 'verify': False})
+    jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify': False})
 else:
     print ("Жира недоступна")
 
@@ -65,7 +67,7 @@ def Start_Of_The_Previous_Month_Date():
 
 def Get_Today_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_altatec.Get_Today_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_1.Get_Today_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -84,7 +86,7 @@ def Get_Today_Logged_Work(person, projects):
 
 def Get_Yesterday_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_altatec.Get_Currnet_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_1.Get_Currnet_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -101,7 +103,7 @@ def Get_Yesterday_Logged_Work(person, projects):
 
 def Get_Current_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_altatec.Get_Currnet_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_1.Get_Currnet_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -118,7 +120,7 @@ def Get_Current_Month_Logged_Work(person, projects):
 
 def Get_Previous_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_altatec.Get_Previous_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_1.Get_Previous_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -131,9 +133,3 @@ def Get_Previous_Month_Logged_Work(person, projects):
             print("FUCK OFF: ", e.status_code, e.text)
             continue
     return(person_with_hours)
-
-
-#Get_Today_Logged_Work()
-#Get_Yesterday_Logged_Work()
-#Get_Current_Month_Logged_Work()
-#Get_Previous_Month_Logged_Work('e.barnaev', ['dgpbus', 'rotek', 'rustek'])

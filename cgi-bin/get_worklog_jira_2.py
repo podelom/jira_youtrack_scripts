@@ -1,14 +1,15 @@
 #!/usr/local/bin/python3.7
 ##!C:\Python36\python.exe
 from jira import JIRA, JIRAError
-import get_issues_updated_dgp
+import get_issues_updated_jira_2
 from datetime import datetime, timedelta
 import urllib3
+import securer_prod
 
 
-jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'certs.pem'})
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':False})
+jira_auth = securer_prod.jira_credentials_1
+jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify':'certs.pem'})
+
 fullnames = {}
 
 urllib3.disable_warnings()
@@ -51,7 +52,7 @@ def Start_Of_The_Previous_Month_Date():
 
 def Get_Today_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_dgp.Get_Today_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_2.Get_Today_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -70,7 +71,7 @@ def Get_Today_Logged_Work(person, projects):
 
 def Get_Yesterday_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_dgp.Get_Currnet_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_2.Get_Currnet_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -87,7 +88,7 @@ def Get_Yesterday_Logged_Work(person, projects):
 
 def Get_Current_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_dgp.Get_Currnet_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_2.Get_Currnet_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)
@@ -104,7 +105,7 @@ def Get_Current_Month_Logged_Work(person, projects):
 
 def Get_Previous_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
-    for issue in get_issues_updated_dgp.Get_Previous_Month_Updated_Issues(person, projects):
+    for issue in get_issues_updated_jira_2.Get_Previous_Month_Updated_Issues(person, projects):
         try:
             for item in jira.worklogs(issue):
                 worklog = jira.worklog(issue, item)

@@ -5,22 +5,26 @@ import ssl
 from email.header import Header
 from  email.utils import formataddr
 from email.message import EmailMessage
+import securer_prod
+import smtp_details_prod
 
+smtp_server = securer_prod.smtp_server['link']
+template = smtp_details_prod.tmpl1
 def SendMessage(text_to_send, email, texttype):
     refused = {}
-    _recepients_emails = email
-    _sender_name = 'Любовь Ворклогова'
-    _sender_address = 'lyuboff_worklogova@altatec.ru'
-    _subject = 'Я - твоя любимая Напоминалочка'
+    recepients_emails = email
+    sender_name = template['sender_name']
+    sender_address = template['sender_address']
+    subject = template['subject']
 
     msg = EmailMessage()
     msg.set_content(text_to_send, subtype=texttype)
-    msg['Subject'] = _subject
-    msg['From'] = formataddr((_sender_name, _sender_address))
-    msg['To'] = _recepients_emails
+    msg['Subject'] = subject
+    msg['From'] = formataddr((sender_name, sender_address))
+    msg['To'] = recepients_emails
 
     try:
-        server = smtplib.SMTP('mail.i.altatec.ru', 25)
+        server = smtplib.SMTP(smtp_server, 25)
         try:
             server.send_message(msg)
         finally:

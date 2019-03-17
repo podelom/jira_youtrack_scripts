@@ -5,13 +5,10 @@ import get_issues_updated_youtrack
 import datetime
 import time
 from datetime import datetime, timedelta
+import securer_prod
 
-api_token = 'perm:ZS5iYXJuYWV2.R2V0V29ya2xvZw==.AuVc0X3Df1iHyY6ljWBauvrKM7WPoi'
-#api_url_base = 'http://vps580284.ovh.net:8081/rest/issue'
-#api_url_base = 'http://vps580284.ovh.net:8081/rest/issue?filter=for%3A+e.barnaev+work+date%3A2018-07-01+..+2018-07-31'
-api_url_base = 'http://vps580284.ovh.net:8081/rest/issue/TKP-1/timetracking/workitem/'
- #e.barnaev  work date: 2018-07-01 .. 2018-07-31
-#GET http://localhost:8081/rest/issue?filter=for%3A+me+%23Unresolved+%23Exception&filter=for%3A+me+%23Unresolved+%23Show-stopper
+api_token = securer_prod.youtrack_credentials['token']
+ytrck_url = securer_prod.youtrack_credentials['link']
 
 headers = {'Accept': 'application/json',
            'Authorization': 'Bearer {0}'.format(api_token)}
@@ -59,7 +56,7 @@ def Get_Current_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
     issues = get_issues_updated_youtrack.Get_Currnet_Month_Updated_Issues(person, projects)
     for issue in issues:
-        link = 'http://vps580284.ovh.net:8081/rest/issue/{}/timetracking/workitem/'.format(issue)
+        link = '{}/rest/issue/{}/timetracking/workitem/'.format(ytrck_url, issue)
         response = requests.get(link, headers=headers)
         if response.status_code == 200:
             data = json.loads(response.content)
@@ -76,7 +73,7 @@ def Get_Previous_Month_Logged_Work(person, projects):
     person_with_hours = {person: 0}
     issues = get_issues_updated_youtrack.Get_Previous_Month_Updated_Issues(person, projects)
     for issue in issues:
-        link = 'http://vps580284.ovh.net:8081/rest/issue/{}/timetracking/workitem/'.format(issue)
+        link = '{}/rest/issue/{}/timetracking/workitem/'.format(ytrck_url, issue)
         response = requests.get(link, headers=headers)
         if response.status_code == 200:
             data = json.loads(response.content)
@@ -94,7 +91,7 @@ def Get_Today_Logged_Work(person, projects):
     person_with_hours = {person: 0}
     issues = get_issues_updated_youtrack.Get_Today_Updated_Issues(person, projects)
     for issue in issues:
-        link = 'http://vps580284.ovh.net:8081/rest/issue/{}/timetracking/workitem/'.format(issue)
+        link = '{}/rest/issue/{}/timetracking/workitem/'.format(ytrck_url, issue)
         response = requests.get(link, headers=headers)
         if response.status_code == 200:
             data = json.loads(response.content)
@@ -113,7 +110,7 @@ def Get_Yesterday_Logged_Work(person, projects):
     person_with_hours = {person: 0}
     issues = get_issues_updated_youtrack.Get_Yesterday_Updated_Issues(person, projects)
     for issue in issues:
-        link = 'http://vps580284.ovh.net:8081/rest/issue/{}/timetracking/workitem/'.format(issue)
+        link = '{}/rest/issue/{}/timetracking/workitem/'.format(ytrck_url, issue)
         response = requests.get(link, headers=headers)
         if response.status_code == 200:
             data = json.loads(response.content)
@@ -127,10 +124,4 @@ def Get_Yesterday_Logged_Work(person, projects):
             return None
     print("person with hours Yesterday: ", person_with_hours)
     return(person_with_hours)
-
-#Get_Current_Month_Logged_Work('e.barnaev', 'TKP')
-#Get_Previous_Month_Logged_Work('e.barnaev', 'TKP')
-Get_Today_Logged_Work('e.barnaev', 'TKP')
-#Get_Yesterday_Logged_Work('e.barnaev', 'TKP')
-
 

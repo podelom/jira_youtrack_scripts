@@ -2,11 +2,12 @@
 ##!C:\Python36\python.exe
 from jira import JIRA
 import urllib3
+import securer_prod
 urllib3.disable_warnings()
 
-jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'certs.pem'})
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':'/opt/worklog_summary/jira_worklog/cgi-bin/certs.pem'})
-#jira = jira = JIRA(basic_auth=('e.barnaev', 'Rfqhfnrth^6'), options = {'server': 'https://dgpjira.alfakom.org/', 'verify':False})
+jira_auth = securer_prod.jira_credentials_1
+jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify':'certs.pem'})
+
 def Get_Currnet_Month_Updated_Issues(person, projects):
     projects_list = ", ".join(projects)
     base_request = "worklogDate >= startOfMonth() and project in ({}) and worklogAuthor = {}".format(projects_list, person)

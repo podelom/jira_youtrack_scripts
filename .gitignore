@@ -2,3 +2,8 @@
 *.swp
 *.log
 *.sublime-workspace
+*.ico
+indev_*
+test*
+*_prod.py
+push_script.py

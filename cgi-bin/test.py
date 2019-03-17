@@ -1,10 +1,4 @@
-#!/usr/local/bin/python3
-
-import get_worklog_altatec
-import get_worklog_dgp
-import config
-import smtp_sender
-import json
+import securer_template
 
 #text_to_send = "Чмафки!"
 #email = 'e.barnaev@altatec.ru'
