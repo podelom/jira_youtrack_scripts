@@ -9,7 +9,7 @@ import securer_templates
 import smtp_details_templates
 
 smtp_server = securer_templates.smtp_server_public
-template = smtp_details_templates_templates_templates_prod.tmpl1
+template = smtp_details_templates.tmpl1
 def SendMessage(text_to_send, email):
     refused = {}
     recepients_emails = email
