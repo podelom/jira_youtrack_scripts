@@ -3,12 +3,11 @@
 import json
 import logging
 
-
-import config_prod
 import smtp_sender
 import get_worklog_jira_1
 import get_worklog_jira_2
 import text_data_prod
+import config_prod
 #import get_worklog_youtrack
 #import config_template
 
