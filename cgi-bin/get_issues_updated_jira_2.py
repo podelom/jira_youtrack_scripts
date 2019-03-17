@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-##!C:\Python36\python.exe
+
 from jira import JIRA
 import urllib3
 import securer_templates

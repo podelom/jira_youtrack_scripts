@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-##!C:\Python36\python.exe
+
 from jira import JIRA, JIRAError
 import get_issues_updated_jira_1
 from datetime import datetime, timedelta
