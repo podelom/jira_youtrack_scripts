@@ -7,7 +7,6 @@ import securer_templates
 
 urllib3.disable_warnings()
 
-
 jira_auth = securer_templates.jira_credentials_2
 
 REMOTE_SERVER = jira_auth['link']
