@@ -9,7 +9,7 @@ import securer_templates
 
 jira_auth = securer_templates.jira_credentials_2
 
-REMOTE_SERVER = jira_auth['link']
+REMOTE_SERVER = jira_auth['address']
 def is_connected():
   try:
     host = socket.gethostbyname(REMOTE_SERVER)
