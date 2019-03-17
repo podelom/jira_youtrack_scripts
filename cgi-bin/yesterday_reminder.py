@@ -5,8 +5,8 @@ import logging
 
 
 import smtp_sender
-import text_data_prod
-import config_prod
+import text_data_templates
+import config_templates
 import get_worklog_jira_1
 import get_worklog_jira_2
 #import get_worklog_youtrack
@@ -20,10 +20,10 @@ fh.setFormatter(formatter)
 logger.addHandler(fh)
 
 if __name__ == "__main__":
-    jira_dgp = config_prod.jira_2
-    jira_altatec = config_prod.jira_1
-    #youtrack_tkp = config_prod.youtrack_tkp
-    template = text_data_prod
+    jira_dgp = config_templates.jira_2
+    jira_altatec = config_templates.jira_1
+    #youtrack_tkp = config_templates.youtrack_tkp
+    template = text_data_templates
     summary = {}
     texttype = "plain"
     for name in jira_dgp:
@@ -59,8 +59,8 @@ if __name__ == "__main__":
     for person in summary:
         print ("Person: ", person)
         if summary[person] == 0:
-            if person in config_prod.emails:
-                for name in config_prod.employee:
+            if person in config_templates.emails:
+                for name in config_templates.employee:
                     if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
                         text_to_send = template.yesterday_log0['nojoke'].format(summary[person])
                         print ("name: ", name['name'])
@@ -83,11 +83,11 @@ if __name__ == "__main__":
                         text_to_send = ""
                 if text_to_send != "":
                     logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
-                    smtp_sender.SendMessage(text_to_send, config_prod.emails[person], texttype)
+                    smtp_sender.SendMessage(text_to_send, config_templates.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 0 and summary[person] <= 3):
-            if person in config_prod.emails:
-                for name in config_prod.employee:
+            if person in config_templates.emails:
+                for name in config_templates.employee:
                     if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
                         text_to_send = template.yesterday_log0_3['nojoke'].format(summary[person])
                         print ("name: ", name['name'])
@@ -110,11 +110,11 @@ if __name__ == "__main__":
                         text_to_send = ""
                 if text_to_send != "":
                     logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
-                    smtp_sender.SendMessage(text_to_send, config_prod.emails[person], texttype)
+                    smtp_sender.SendMessage(text_to_send, config_templates.emails[person], texttype)
             else: print ("no email")
         elif (summary[person] > 3 and summary[person] < 8):
-            if person in config_prod.emails:
-                for name in config_prod.employee:
+            if person in config_templates.emails:
+                for name in config_templates.employee:
                     if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
                         text_to_send = template.yesterday_log3_8['nojoke'].format(summary[person])
                         print ("name: ", name['name'])
@@ -137,11 +137,11 @@ if __name__ == "__main__":
                         text_to_send = ""
                 if text_to_send != "":
                     logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
-                    smtp_sender.SendMessage(text_to_send, config_prod.emails[person], texttype)
+                    smtp_sender.SendMessage(text_to_send, config_templates.emails[person], texttype)
             else: print ("no email")
         elif summary[person] >= 8:
-            if person in config_prod.emails:
-                for name in config_prod.employee:
+            if person in config_templates.emails:
+                for name in config_templates.employee:
                     if name['name'] == person and name['sex'] == 'm' and name['joke_level'] == 0:
                         text_to_send = template.yesterday_log8['nojoke'].format(summary[person])
                     elif name['name'] == person and name['sex'] == 'w' and name['joke_level'] == 0:
@@ -158,8 +158,8 @@ if __name__ == "__main__":
                         text_to_send = ""
                 if text_to_send != "":
                     logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
-                    smtp_sender.SendMessage(text_to_send, config_prod.emails[person], texttype)
+                    smtp_sender.SendMessage(text_to_send, config_templates.emails[person], texttype)
             else: print ("no email")
 
     otchet = json.dumps(summary)
-    smtp_sender.SendMessage(otchet, config_prod.email_report, texttype)
+    smtp_sender.SendMessage(otchet, config_templates.email_report, texttype)

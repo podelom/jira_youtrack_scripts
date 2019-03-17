@@ -2,10 +2,10 @@
 ##!C:\Python36\python.exe
 from jira import JIRA
 import urllib3
-import securer_prod
+import securer_templates
 urllib3.disable_warnings()
 
-jira_auth = securer_prod.jira_credentials_1
+jira_auth = securer_templates.jira_credentials_1
 jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify':'certs.pem'})
 
 def Get_Currnet_Month_Updated_Issues(person, projects):

@@ -1,11 +1,11 @@
 #!/usr/local/bin/python3
 import json
 import requests
-import securer_prod
+import securer_templates
 
 
-api_token = securer_prod.youtrack_credentials['token']
-ytrck_url = securer_prod.youtrack_credentials['link']
+api_token = securer_templates.youtrack_credentials['token']
+ytrck_url = securer_templates.youtrack_credentials['link']
 
 headers = {'Accept': 'application/json',
            'Authorization': 'Bearer {0}'.format(api_token)}

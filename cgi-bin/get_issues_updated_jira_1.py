@@ -3,12 +3,12 @@
 from jira import JIRA
 import urllib3
 import socket
-import securer_prod
+import securer_templates
 
 urllib3.disable_warnings()
 
 
-jira_auth = securer_prod.jira_credentials_2
+jira_auth = securer_templates.jira_credentials_2
 
 REMOTE_SERVER = jira_auth['link']
 def is_connected():

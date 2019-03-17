@@ -4,10 +4,10 @@ from jira import JIRA, JIRAError
 import get_issues_updated_jira_2
 from datetime import datetime, timedelta
 import urllib3
-import securer_prod
+import securer_templates
 
 
-jira_auth = securer_prod.jira_credentials_1
+jira_auth = securer_templates.jira_credentials_1
 jira = jira = JIRA(basic_auth=(jira_auth['login'], jira_auth['password']), options = {'server': jira_auth['link'], 'verify':'certs.pem'})
 
 fullnames = {}

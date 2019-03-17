@@ -5,9 +5,9 @@ import get_issues_updated_jira_1
 from datetime import datetime, timedelta
 import urllib3
 import socket
-import securer_prod
+import securer_templates
 
-jira_auth = securer_prod.jira_credentials_2
+jira_auth = securer_templates.jira_credentials_2
 
 REMOTE_SERVER = jira_auth['link']
 def is_connected():
