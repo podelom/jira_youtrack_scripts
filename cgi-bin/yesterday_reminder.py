@@ -3,7 +3,6 @@
 import json
 import logging
 
-
 import smtp_sender
 import text_data_templates
 import config_templates
