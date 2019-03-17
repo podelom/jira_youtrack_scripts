@@ -8,4 +8,5 @@ test*.
 *_prod.py
 cgi-bin/output/
 cgi-bin/test/
+images/
 push_script.py
