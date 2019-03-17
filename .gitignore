@@ -4,6 +4,8 @@
 *.sublime-workspace
 *.ico
 indev_*
-test*
+test*.
 *_prod.py
+cgi-bin/output/
+cgi-bin/test/
 push_script.py
