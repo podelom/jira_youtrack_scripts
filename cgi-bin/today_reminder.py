@@ -87,19 +87,19 @@ if __name__ == "__main__":
             if person in config_templates.emails:
                 for item in config_templates.employee:
                     if item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 0:
-                        text_to_send = template.today_log0_3['nojoke'].format(summary[person])
+                        text_to_send = template.today_log0_3['nojoke'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 0:
-                        text_to_send = template.today_log0_3['nojoke_w'].format(summary[person])
+                        text_to_send = template.today_log0_3['nojoke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 1:
-                        text_to_send = template.today_log0_3['joke'].format(summary[person])
+                        text_to_send = template.today_log0_3['joke'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 1:
-                        text_to_send = template.today_log0_3['joke_w'].format(summary[person])
+                        text_to_send = template.today_log0_3['joke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login']) 
                         break
                 logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
@@ -109,19 +109,19 @@ if __name__ == "__main__":
             if person in config_templates.emails:
                 for item in config_templates.employee:
                     if item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 0:
-                        text_to_send = template.today_log3_8['nojoke'].format(summary[person])
+                        text_to_send = template.today_log3_8['nojoke'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 0:
-                        text_to_send = template.today_log3_8['nojoke_w'].format(summary[person])
+                        text_to_send = template.today_log3_8['nojoke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 1:
-                        text_to_send = template.today_log3_8['joke'].format(summary[person])
+                        text_to_send = template.today_log3_8['joke'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 1:
-                        text_to_send = template.today_log3_8['joke_w'].format(summary[person])
+                        text_to_send = template.today_log3_8['joke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login']) 
                         break
                 logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
@@ -131,19 +131,19 @@ if __name__ == "__main__":
             if person in config_templates.emails:
                 for item in config_templates.employee:
                     if item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 0:
-                        text_to_send = template.today_log8['nojoke'].format(summary[person])
+                        text_to_send = template.today_log8['nojoke'].format(item['name'], summary[person])
                         print ("Человек несмеющийся: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 0:
-                        text_to_send = template.today_log8['nojoke_w'].format(summary[person])
+                        text_to_send = template.today_log8['nojoke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'm' and item['joke_level'] == 1:
-                        text_to_send = template.today_log8['joke'].format(summary[person])
+                        text_to_send = template.today_log8['joke'].format(item['name'], summary[person])
                         print ("Человек несмеющийся: ", item['login'])
                         break
                     elif item['login'] == person and item['sex'] == 'w' and item['joke_level'] == 1:
-                        text_to_send = template.today_log8['joke_w'].format(summary[person])
+                        text_to_send = template.today_log8['joke_w'].format(item['name'], summary[person])
                         print ("login: ", item['login'])
                         break
                 logger.info("Text to send: {}, person to recieve: {}".format(text_to_send, person))
