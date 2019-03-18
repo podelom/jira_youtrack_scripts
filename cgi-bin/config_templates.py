@@ -22,17 +22,17 @@ emails = {'user1': 'user1@company.com',
           }
 
 employee = [{
-             'name': 'user1',
+             'login': 'user1',
              'sex' : 'm',
              'joke_level' : 1
             },
             {
-             'name': 'user2',
+             'login': 'user2',
              'sex' : 'm',
              'joke_level' : 0
             },
             {
-             'name': 'user3',
+             'login': 'user3',
              'sex' : 'w',
              'joke_level' : 1
             }

@@ -21,7 +21,7 @@ def SendMessage(text_to_send, email, texttype):
     msg.set_content(text_to_send, subtype=texttype)
     msg['Subject'] = subject
     msg['From'] = formataddr((sender_name, sender_address))
-    msg['To'] = recepients_emails
+    msg['To'] = ", ".join(recepients_emails)
 
     try:
         server = smtplib.SMTP(smtp_server, 25)
